@@ -1,0 +1,207 @@
+/* ============================================
+   SERVICES SECTION — inherits body background
+   ============================================ */
+.services-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 120px;
+  z-index: 1;
+}
+
+.services-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---- Left column ---- */
+.services-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Header ---- */
+.services-header {
+  margin-bottom: 56px;
+}
+
+.services-heading {
+  font-family: 'Antonio', 'Nunito', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0 0 18px 0;
+  padding-bottom: 0.08em;
+}
+
+.services-subtext {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  max-width: 480px;
+  margin: 0;
+}
+
+/* ---- Accordion ---- */
+.services-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.accordion-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Trigger button */
+.accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  gap: 1rem;
+}
+
+.accordion-number-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.accordion-number {
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.3s ease;
+}
+
+.accordion-number.active {
+  color: #d0ff71;
+}
+
+.accordion-title {
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.3s ease;
+}
+
+.accordion-title.active {
+  color: #d0ff71;
+}
+
+/* Chevron icon */
+.accordion-icon {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+.accordion-icon.rotated {
+  transform: rotate(180deg);
+  color: #d0ff71;
+}
+
+/* Expandable body */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.open .accordion-body {
+  max-height: 400px;
+}
+
+.accordion-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.88rem, 1.5vw, 0.98rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Hover states ---- */
+.accordion-trigger:hover .accordion-title:not(.active) {
+  color: rgba(255, 255, 255, 1);
+}
+
+.accordion-trigger:hover .accordion-number:not(.active) {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.accordion-trigger:hover .accordion-icon:not(.rotated) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 968px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-section {
+    padding: 70px 0 80px;
+  }
+
+  .services-container {
+    padding: 0 24px;
+  }
+
+  .services-header {
+    margin-bottom: 36px;
+  }
+
+  .accordion-trigger {
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,212 @@
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 1px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 8px 20px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-container:hover {
+  background: rgba(25, 25, 25, 0.85);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+/* Profile Avatar */
+.navbar-profile {
+  flex-shrink: 0;
+}
+
+.navbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-avatar:hover {
+  transform: scale(1.1);
+  border-color: rgba(208, 255, 113, 0.6);
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+  padding: 4px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d0ff71;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Contact Button */
+.navbar-cta {
+  flex-shrink: 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  border-radius: 50px;
+  line-height: 1.2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:hover {
+  background: #d0ff71;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(208, 255, 113, 0.3);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    max-width: 95%;
+    top: 16px;
+  }
+
+  .navbar-container {
+    padding: 10px 16px;
+    gap: 1rem;
+  }
+
+  .navbar-links {
+    gap: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    max-width: calc(100% - 32px);
+  }
+
+  .navbar-container {
+    padding: 8px 12px;
+    gap: 0.5rem;
+  }
+
+  .navbar-links {
+    gap: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .navbar-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-btn {
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    gap: 0.6rem;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .contact-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}
