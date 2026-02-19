@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import ServicesSection from './components/ServicesSection'
+import CustomCursor from './components/CustomCursor'
 
 function App() {
   useEffect(() => {
@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className="content">
+      <CustomCursor />
       <Navbar />
       <HeroSection />
-      <ServicesSection />
     </div>
   )
 }

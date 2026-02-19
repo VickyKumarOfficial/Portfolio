@@ -1,5 +1,9 @@
-import { useState } from 'react'
+import { useState, type RefObject } from 'react'
 import './ServicesSection.css'
+
+interface ServicesSectionProps {
+  servicesRightRef?: RefObject<HTMLDivElement | null>
+}
 
 interface Service {
   id: number
@@ -60,7 +64,7 @@ const services: Service[] = [
   },
 ]
 
-export default function ServicesSection() {
+export default function ServicesSection({ servicesRightRef }: ServicesSectionProps) {
   const [openId, setOpenId] = useState<number | null>(null)
 
   const toggle = (id: number) => {
@@ -146,8 +150,8 @@ export default function ServicesSection() {
 
         </div>{/* end services-left */}
 
-        {/* Right column — intentionally empty */}
-        <div className="services-right" />
+        {/* Right column — landing zone for animated card */}
+        <div className="services-right" ref={servicesRightRef} />
 
       </div>
     </section>

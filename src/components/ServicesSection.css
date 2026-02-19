@@ -24,6 +24,12 @@
   flex-direction: column;
 }
 
+/* ---- Right column — landing zone for scroll-animated card ---- */
+.services-right {
+  min-height: 400px;
+  position: relative;
+}
+
 /* ---- Header ---- */
 .services-header {
   margin-bottom: 56px;
@@ -179,6 +185,10 @@
   .services-container {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .services-right {
+    display: none;
   }
 }
 
