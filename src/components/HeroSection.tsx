@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ServicesSection from './ServicesSection'
 import AboutSection from './AboutSection'
 import ProjectsSection from './ProjectsSection'
+import ContactSection from './ContactSection'
 import './HeroSection.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -133,6 +134,7 @@ const HeroSection = () => {
     </div>
     <AboutSection />
     <ProjectsSection />
+    <ContactSection />
     </>
   )
 }
