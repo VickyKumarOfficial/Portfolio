@@ -11,6 +11,8 @@ const CustomCursor = () => {
 
     let mouseX = 0
     let mouseY = 0
+    let currentX = 0
+    let currentY = 0
     let rafId: number
 
     const onMouseMove = (e: MouseEvent) => {
@@ -18,10 +20,15 @@ const CustomCursor = () => {
       mouseY = e.clientY
     }
 
-    // rAF loop for smooth lag-free following
+    // rAF loop with smooth lag (lerp interpolation)
     const loop = () => {
+      // Lerp factor for ~0.2s delay (0.15 = smooth following)
+      const lerp = 0.15
+      currentX += (mouseX - currentX) * lerp
+      currentY += (mouseY - currentY) * lerp
+      
       // Offset: bottom-right of cursor tip
-      dot.style.transform = `translate(${mouseX + 20}px, ${mouseY + 20}px)`
+      dot.style.transform = `translate(${currentX + 20}px, ${currentY + 20}px)`
       rafId = requestAnimationFrame(loop)
     }
 
@@ -35,6 +42,8 @@ const CustomCursor = () => {
     const addListeners = () => {
       const targets = document.querySelectorAll('a, button, [role="button"], .accordion-item')
       targets.forEach((el) => {
+        // Skip elements inside the navbar
+        if (el.closest('.navbar')) return
         el.addEventListener('mouseenter', handleEnter)
         el.addEventListener('mouseleave', handleLeave)
       })

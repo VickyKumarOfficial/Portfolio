@@ -125,6 +125,7 @@
   transform-style: preserve-3d;
   /* Offset so Hi badge bottom-left corner aligns with hero center */
   left: 20px;
+  margin-left: -3rem;
   top: 20px;
 }
 
