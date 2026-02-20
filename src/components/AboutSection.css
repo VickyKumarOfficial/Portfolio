@@ -1,0 +1,276 @@
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 120px;
+  z-index: 1;
+}
+
+.about-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left column ── */
+.about-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-heading {
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.0;
+  margin: 0 0 18px 0;
+}
+
+.about-text {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 40px 0;
+}
+
+/* ── Stats ── */
+.about-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 40px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.stat-item + .stat-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 28px;
+  padding-right: 20px;
+}
+
+.stat-number {
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  color: #d0ff71;
+  line-height: 1;
+  /* Ensure digits don't cause layout shift */
+  min-width: 3ch;
+  display: inline-block;
+}
+
+.stat-label {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  max-width: 110px;
+}
+
+/* ── Contact ── */
+.about-contact {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.82rem, 1.2vw, 0.9rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contact-value {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.82rem, 1.2vw, 0.9rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Socials ── */
+.about-socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.about-social-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.about-social-icon:hover {
+  border-color: #d0ff71;
+  color: #d0ff71;
+  background: rgba(208, 255, 113, 0.06);
+}
+
+/* ── Footer row ── */
+.about-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 480px;
+}
+
+.about-story-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 38px;
+  border: 2px solid #d0ff71;
+  border-radius: 999px;
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.about-story-btn:hover {
+  background: #d0ff71;
+  color: #1a1a1a;
+}
+
+/* Toggle switch */
+.about-toggle {
+  position: relative;
+  width: 58px;
+  height: 30px;
+  background: #d0ff71;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  transition: right 0.3s ease;
+}
+
+/* ── Right column — image ── */
+.about-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-resume-pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  border-radius: 20px;
+}
+
+.about-image-overlay {
+  display: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .about-right {
+    order: -1;
+  }
+
+  .about-image-frame {
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 70px 0 80px;
+  }
+
+  .about-container {
+    padding: 0 24px;
+  }
+
+  .about-contact {
+    gap: 28px;
+  }
+
+  .about-footer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0 16px;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .stat-item + .stat-item {
+    border-left: none;
+    padding-left: 0;
+  }
+}

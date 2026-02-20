@@ -3,6 +3,7 @@ import './ServicesSection.css'
 
 interface ServicesSectionProps {
   servicesRightRef?: RefObject<HTMLDivElement | null>
+  servicesSectionRef?: RefObject<HTMLDivElement | null>
 }
 
 interface Service {
@@ -64,7 +65,7 @@ const services: Service[] = [
   },
 ]
 
-export default function ServicesSection({ servicesRightRef }: ServicesSectionProps) {
+export default function ServicesSection({ servicesRightRef, servicesSectionRef }: ServicesSectionProps) {
   const [openId, setOpenId] = useState<number | null>(null)
 
   const toggle = (id: number) => {
@@ -72,7 +73,7 @@ export default function ServicesSection({ servicesRightRef }: ServicesSectionPro
   }
 
   return (
-    <section className="services-section">
+    <section className="services-section" ref={servicesSectionRef}>
       <div className="services-container">
 
         {/* Left Column */}

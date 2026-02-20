@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ServicesSection from './ServicesSection'
+import AboutSection from './AboutSection'
 import './HeroSection.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -11,6 +12,7 @@ const HeroSection = () => {
   const imageWrapperRef = useRef<HTMLDivElement>(null)
   const pinnedWrapperRef = useRef<HTMLDivElement>(null)
   const servicesRightRef = useRef<HTMLDivElement>(null)
+  const servicesSectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const imageWrapper = imageWrapperRef.current
@@ -21,7 +23,6 @@ const HeroSection = () => {
       const mm = gsap.matchMedia()
 
       mm.add('(min-width: 969px)', () => {
-        // Calculate the destination: services right column center
         const getEndX = () => {
           const right = document.querySelector('.services-right')
           if (!right || !imageWrapper) return window.innerWidth * 0.25
@@ -39,7 +40,6 @@ const HeroSection = () => {
           return rightRect.top - heroRect.top - heroRect.height / 2 + 328
         }
 
-        // Single ScrollTrigger: pin + animate together (no conflict)
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: pinnedWrapper,
@@ -66,6 +66,7 @@ const HeroSection = () => {
   }, [])
 
   return (
+    <>
     <div className="pinned-scroll-wrapper" ref={pinnedWrapperRef}>
       <section className="hero-section" ref={sectionRef}>
         <div className="hero-container">
@@ -127,8 +128,10 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <ServicesSection servicesRightRef={servicesRightRef} />
+      <ServicesSection servicesRightRef={servicesRightRef} servicesSectionRef={servicesSectionRef} />
     </div>
+    <AboutSection />
+    </>
   )
 }
 
