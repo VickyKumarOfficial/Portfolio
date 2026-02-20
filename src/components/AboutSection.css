@@ -224,6 +224,55 @@
   display: none;
 }
 
+/* ── Tech stack marquee ── */
+.about-techstack {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.techstack-label {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.techstack-row {
+  margin-bottom: 32px;
+}
+
+.techstack-row:last-child {
+  margin-bottom: 0;
+}
+
+.techstack-row-label {
+  display: block;
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Icon color inside the loop — all white, muted */
+.about-techstack .logoloop__node svg {
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.25s ease;
+}
+
+.about-techstack .logoloop__item:hover .logoloop__node svg {
+  color: #d0ff71;
+}
+
 /* ── Responsive ── */
 @media (max-width: 968px) {
   .about-container {

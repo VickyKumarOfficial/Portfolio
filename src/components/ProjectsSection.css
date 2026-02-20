@@ -1,0 +1,107 @@
+/* ============================================
+   PROJECTS SECTION — stacked scroll cards
+   ============================================ */
+.projects-section {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+}
+
+/* ── Section header ── */
+.projects-header {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 80px 72px;
+}
+
+.projects-heading {
+  font-family: 'Antonio', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.0;
+  margin: 0 0 20px 0;
+}
+
+.projects-subtext {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: clamp(0.88rem, 1.4vw, 1rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ── Pinned stack container ── */
+/* All cards live here, absolutely on top of each other.
+   GSAP pins this element and drives the timeline. */
+.projects-stack {
+  position: relative;
+  /* Side padding — generous inset from screen edges */
+  width: calc(100% - 160px);
+  margin: 0 auto;
+  /* Full viewport height minus a top gap so the navbar breathes */
+  height: calc(100vh - 60px);
+  border-radius: 24px;
+  overflow: hidden;   /* clips the incoming cards sliding up */
+}
+
+/* ── Individual card — absolutely fills the stack ── */
+.project-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  /* z-index set inline (higher index = on top) */
+  transform-origin: center top;
+  will-change: transform;
+}
+
+/* ── Full-cover image ── */
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .projects-header {
+    padding: 0 40px 56px;
+  }
+
+  .projects-stack {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-section {
+    padding-top: 70px;
+  }
+
+  .projects-header {
+    padding: 0 24px 48px;
+  }
+
+  .projects-stack {
+    width: calc(100% - 48px);
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-header {
+    padding: 0 16px 40px;
+  }
+
+  .projects-stack {
+    width: calc(100% - 32px);
+    border-radius: 12px;
+  }
+}

@@ -7,6 +7,11 @@
   width: 100%;
   max-width: 520px;
   padding: 0 1px;
+  transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.collapsed {
+  max-width: 230px;
 }
 
 .navbar-container {
@@ -63,6 +68,19 @@
   gap: 1.2rem;
   flex: 1;
   justify-content: center;
+  overflow: hidden;
+  max-width: 400px;
+  opacity: 1;
+  /* extra bottom padding so the ::after underline isn't clipped */
+  padding-bottom: 6px;
+  margin-bottom: -6px;
+  transition: opacity 0.25s ease, max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.collapsed .navbar-links {
+  opacity: 0;
+  max-width: 0;
+  pointer-events: none;
 }
 
 .nav-link {
@@ -111,6 +129,57 @@
 /* Contact Button */
 .navbar-cta {
   flex-shrink: 0;
+  overflow: hidden;
+  max-width: 120px;
+  opacity: 1;
+  transition: opacity 0.2s ease, max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.collapsed .navbar-cta {
+  opacity: 0;
+  max-width: 0;
+  pointer-events: none;
+}
+
+/* Available for work badge (shown when collapsed) */
+.navbar-available {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.35s ease 0.15s, max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.collapsed .navbar-available {
+  opacity: 1;
+  max-width: 180px;
+}
+
+.available-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.7);
+  animation: blink-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(34, 197, 94, 0.9); }
+  50%       { opacity: 0.25; box-shadow: none; }
+}
+
+.available-text {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.01em;
 }
 
 .contact-btn {
