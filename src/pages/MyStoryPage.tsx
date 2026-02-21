@@ -8,6 +8,7 @@ import {
 } from 'react-icons/si'
 import { StickyScroll, type StickyScrollItem } from '../ui/sticky-scroll-reveal'
 import ContactSection from '../components/ContactSection'
+import Footer from '../components/Footer'
 import CustomCursor from '../components/CustomCursor'
 import './MyStoryPage.css'
 
@@ -293,6 +294,7 @@ export default function MyStoryPage() {
       </section>
 
       <ContactSection />
+      <Footer />
     </div>
   )
 }

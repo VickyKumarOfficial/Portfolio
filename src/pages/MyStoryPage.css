@@ -2,7 +2,6 @@
    MY STORY PAGE â€” Base
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .story-page {
-  background-color: #0a0a0a;
   min-height: 100vh;
   color: #fff;
   overflow-x: clip; /* clip = same visual behaviour as hidden but does NOT create a scroll container, so position:sticky still works */
@@ -210,7 +209,7 @@
    STICKY SCROLL SECTION
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .story-sticky-section {
-  background: #0a0a0a;
+  /* transparent — lets the root grain/scan-line layers show through */
 }
 
 /* â”€â”€ Layout container (part of normal page scroll) â”€â”€ */
@@ -219,7 +218,6 @@
   gap: 80px;
   align-items: flex-start;
   padding: 100px 80px;
-  background: #0a0a0a;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -503,7 +501,6 @@
  */
 .pg-section {
   padding: 80px 80px 100px;
-  background: #0a0a0a;
 }
 
 .pg-header {
