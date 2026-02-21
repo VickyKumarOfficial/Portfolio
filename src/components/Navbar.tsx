@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ basePath = '' }: { basePath?: string }) => {
   const [collapsed, setCollapsed] = useState(false)
   const lastScrollY = useRef(0)
 
@@ -35,15 +35,15 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="navbar-links">
-          <a href="#home" className="nav-link active">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#blogs" className="nav-link">Blogs</a>
+          <a href={`${basePath}#home`} className="nav-link active">Home</a>
+          <a href={`${basePath}#about`} className="nav-link">About</a>
+          <a href={`${basePath}#projects`} className="nav-link">Projects</a>
+          <a href={`${basePath}#blogs`} className="nav-link">Blogs</a>
         </div>
 
         {/* Contact Button */}
         <div className="navbar-cta">
-          <a href="#contact" className="contact-btn">Contact</a>
+          <a href={`${basePath}#contact`} className="contact-btn">Contact</a>
         </div>
 
         {/* Collapsed badge */}

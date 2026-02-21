@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   SiHtml5, SiCss3, SiJavascript, SiTypescript, SiTailwindcss,
   SiCplusplus,
@@ -117,7 +118,7 @@ function AnimatedStat({ target, suffix = '', label, duration = 1800 }: StatProps
 /* ── Main component ── */
 export default function AboutSection() {
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="about-container">
 
         {/* Left: text + stats + contact + socials + CTA */}
@@ -130,7 +131,7 @@ export default function AboutSection() {
 
           {/* Stats */}
           <div className="about-stats">
-            <AnimatedStat target={1}  label="Years of Experience"  duration={1600} />
+            <AnimatedStat target={1}  label="Year of Experience"  duration={1600} />
             <AnimatedStat target={12} suffix="+" label="Completed Projects"   duration={2000} />
             <AnimatedStat target={1}  suffix="+" label="Clients on Worldwide" duration={1400} />
           </div>
@@ -173,7 +174,7 @@ export default function AboutSection() {
 
           {/* Footer row */}
           <div className="about-footer">
-            <a href="#" className="about-story-btn">MY STORY</a>
+            <Link to="/story" className="about-story-btn">MY STORY</Link>
             <button className="about-toggle" aria-label="Toggle theme">
               <span className="toggle-thumb" />
             </button>

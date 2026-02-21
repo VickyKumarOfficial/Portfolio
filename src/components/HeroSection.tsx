@@ -69,7 +69,7 @@ const HeroSection = () => {
 
   return (
     <>
-    <div className="pinned-scroll-wrapper" ref={pinnedWrapperRef}>
+    <div id="home" className="pinned-scroll-wrapper" ref={pinnedWrapperRef}>
       <section className="hero-section" ref={sectionRef}>
         <div className="hero-container">
           {/* Left side text */}

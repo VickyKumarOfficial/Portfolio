@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import CustomCursor from './components/CustomCursor'
+import MyStoryPage from './pages/MyStoryPage'
 
 function App() {
   useEffect(() => {
@@ -29,11 +31,23 @@ function App() {
   }, [])
 
   return (
-    <div className="content">
-      <CustomCursor />
-      <Navbar />
-      <HeroSection />
-    </div>
+    <BrowserRouter>
+      <div className="content">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <CustomCursor />
+                <Navbar />
+                <HeroSection />
+              </>
+            }
+          />
+          <Route path="/story" element={<MyStoryPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
