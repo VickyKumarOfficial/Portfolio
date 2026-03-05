@@ -95,6 +95,41 @@
   }
 }
 
+/* ── Browse projects button ── */
+.browse-projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0 1px;
+}
+
+.browse-projects-btn {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.02em;
+}
+
+.browse-projects-btn:hover {
+  background: #cfff70;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.browse-projects-btn:active {
+  transform: translateY(0);
+}
+
 @media (max-width: 480px) {
   .projects-header {
     padding: 0 16px 40px;

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './ProjectsSection.css'
@@ -13,6 +14,7 @@ const projects = [
 ]
 
 export default function ProjectsSection() {
+  const navigate = useNavigate()
   const stackRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -78,6 +80,12 @@ export default function ProjectsSection() {
             />
           </div>
         ))}
+      </div>
+
+      <div className="browse-projects-container">
+        <button className="browse-projects-btn" onClick={() => navigate('/projects')}>
+          Browse projects
+        </button>
       </div>
 
     </section>

@@ -9,7 +9,7 @@
 .logoloop--vertical {
   height: 100%;
   display: inline-block;
-}
+} 
 
 .logoloop--scale-hover {
   padding-top: calc(var(--logoloop-logoHeight) * 0.1);

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import CustomCursor from './components/CustomCursor'
 import MyStoryPage from './pages/MyStoryPage'
+import ProjectsPage from './pages/ProjectsPage'
 
 function App() {
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
             }
           />
           <Route path="/story" element={<MyStoryPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </div>
     </BrowserRouter>

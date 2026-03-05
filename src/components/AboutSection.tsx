@@ -175,9 +175,9 @@ export default function AboutSection() {
           {/* Footer row */}
           <div className="about-footer">
             <Link to="/story" className="about-story-btn">MY STORY</Link>
-            <button className="about-toggle" aria-label="Toggle theme">
-              <span className="toggle-thumb" />
-            </button>
+            {/* <button className="about-toggle" aria-label="Toggle theme"> */}
+              {/* <span className="toggle-thumb" /> */}
+            {/* </button> */}
           </div>
         </div>
 
