@@ -10,7 +10,8 @@ const projects = [
   { id: 1, title: 'Arcade',     image: '/arcade .png'  },
   { id: 2, title: 'Nexity 60',  image: '/nexity60.png'  },
   { id: 3, title: 'WiELearn',   image: '/wielearn.png'  },
-  { id: 4, title: 'AI for Kids',image: '/aiforkids.png' },
+  { id: 4, title: 'Aiforkids',image: '/aiforkids.png' },
+  { id: 5, title: 'Loveforai',image: '/loveforai.png' },
 ]
 
 export default function ProjectsSection() {
