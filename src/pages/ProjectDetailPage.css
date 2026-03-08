@@ -118,6 +118,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   filter: brightness(0.45) saturate(0.8);
 }
 .pdp-hero-overlay {
@@ -247,106 +248,131 @@
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
-.pdp-tech-chips {
+.pdp-tech-icons {
   display: flex;
   flex-wrap: wrap;
+  gap: 28px 32px;
+}
+
+.pdp-tech-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
+  width: 72px;
+  transition: transform 0.2s ease;
+}
+.pdp-tech-icon-item:hover {
+  transform: translateY(-4px);
 }
 
-.pdp-tech-chip {
-  padding: 8px 20px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
+.pdp-tech-icon-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
   color: rgba(255,255,255,0.75);
-  letter-spacing: 0.02em;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
 }
-.pdp-tech-chip:hover {
-  border-color: rgba(208,255,113,0.35);
+.pdp-tech-icon-item:hover .pdp-tech-icon-wrap {
   color: #d0ff71;
-  background: rgba(208,255,113,0.06);
+  background: rgba(208,255,113,0.07);
+  border-color: rgba(208,255,113,0.25);
 }
 
-/* ── Project Sections ── */
-.pdp-sections {
-  padding: 72px 72px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+.pdp-tech-icon-fallback {
+  font-family: 'Antonio', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+}
+
+.pdp-tech-icon-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Project Breakdown — sticky scroll ── */
+.pdp-breakdown-sticky {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
-.pdp-sections-label {
-  margin-bottom: 56px;
-  /* font-size: 50px; */
+.pdp-breakdown-sticky-header {
+  padding: 64px 80px 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.pdp-breakdown-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 0 36px;
-  padding: 48px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  align-items: start;
-  transition: background 0.2s;
-}
-.pdp-breakdown-item:first-of-type {
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.pdp-breakdown-item:hover .pdp-breakdown-number {
-  color: #d0ff71;
+/* Override shared sticky-scroll layout for this context */
+.pdp-breakdown-sticky .sticky-scroll-root {
+  padding: 40px 80px 80px;
 }
 
-.pdp-breakdown-number {
-  font-family: 'Antonio', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.1);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  transition: color 0.3s;
-  padding-top: 4px;
-}
-
-.pdp-breakdown-body {
-  padding-top: 4px;
-}
-
-.pdp-breakdown-title {
-  font-family: 'Antonio', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 700;
+.pdp-breakdown-sticky .sticky-scroll-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   color: #fff;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 16px;
+  margin-bottom: 16px;
 }
 
-.pdp-breakdown-desc {
+.pdp-ss-desc {
   font-family: 'Nunito', sans-serif;
   font-size: 1rem;
   line-height: 1.8;
   color: rgba(255,255,255,0.55);
-  max-width: 680px;
+  max-width: 480px;
   margin: 0;
 }
 
-/* Section screenshot (optional) */
-.pdp-breakdown-img-wrap {
-  grid-column: 2;
-  margin-top: 28px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  max-width: 680px;
+/* Right sticky panel — wider for screenshots */
+.pdp-breakdown-sticky .pdp-ss-right {
+  width: 580px;
 }
-.pdp-breakdown-img {
+
+.pdp-ss-img-wrap {
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-ss-img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
   display: block;
-  object-fit: cover;
+}
+
+/* Placeholder for sections without a screenshot */
+.pdp-ss-no-img {
+  width: 100%;
+  height: 380px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pdp-ss-no-img span {
+  font-family: 'Antonio', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.15);
+  text-transform: uppercase;
 }
 
 /* ── Footer nav ── */
@@ -399,8 +425,10 @@
 @media (max-width: 1024px) {
   .pdp-hero            { padding: 0 48px 64px; }
   .pdp-section         { padding: 56px 48px; }
-  .pdp-sections        { padding: 56px 48px 32px; }
   .pdp-footer          { padding: 48px 48px 60px; }
+  .pdp-breakdown-sticky-header { padding: 56px 48px 0; }
+  .pdp-breakdown-sticky .sticky-scroll-root { padding: 32px 48px 64px; }
+  .pdp-breakdown-sticky .pdp-ss-right { width: 460px; }
 }
 
 @media (max-width: 768px) {
@@ -409,17 +437,10 @@
   .pdp-hero            { padding: 0 24px 48px; min-height: 75vh; }
   .pdp-hero-title      { font-size: clamp(2.5rem, 12vw, 4rem); }
   .pdp-section         { padding: 48px 24px; }
-  .pdp-sections        { padding: 48px 24px 24px; }
   .pdp-footer          { padding: 40px 24px 56px; }
-
-  .pdp-breakdown-item  {
-    grid-template-columns: 56px 1fr;
-    gap: 0 20px;
-    padding: 36px 0;
-  }
-  .pdp-breakdown-number { font-size: 2.2rem; }
-  .pdp-breakdown-title  { font-size: 1.5rem; }
-  .pdp-breakdown-img-wrap { grid-column: 1 / -1; }
+  .pdp-breakdown-sticky-header { padding: 40px 24px 0; }
+  .pdp-breakdown-sticky .sticky-scroll-root { padding: 24px 24px 56px; }
+  .pdp-breakdown-sticky .pdp-ss-right { width: 100%; }
 
   .pdp-nav-proj-name   { font-size: 1.1rem; }
 }
@@ -427,15 +448,7 @@
 @media (max-width: 480px) {
   .pdp-hero            { padding: 0 16px 40px; }
   .pdp-section         { padding: 40px 16px; }
-  .pdp-sections        { padding: 40px 16px 16px; }
   .pdp-footer          { padding: 32px 16px 48px; }
-
-  .pdp-breakdown-item  {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .pdp-breakdown-number {
-    font-size: 1.6rem;
-    color: rgba(208,255,113,0.4);
-  }
+  .pdp-breakdown-sticky-header { padding: 32px 16px 0; }
+  .pdp-breakdown-sticky .sticky-scroll-root { padding: 16px 16px 48px; }
 }

@@ -27,23 +27,32 @@ export const projects: Project[] = [
     link: 'https://arcade-learn-gqp0.onrender.com/',
     year: '2024',
     role: 'UI/UX Designer & Developer',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+    techStack: ['React 18', 'TypeScript', 'Tailwind CSS', 'Vite', 'Supabase', 'PostgreSQL', 'Node.js', 'Express.js', 'Gemini AI', 'Three.js', 'Framer Motion'],
     sections: [
       {
         title: 'Home Page',
         description: 'A bold, game-style landing experience with animated hero text and a clear call-to-action. The goal was to pull users into the learning world from the first second — using high-contrast visuals and kinetic typography to communicate energy and fun.',
+        image: '/arcadelearn/home.png',
       },
       {
-        title: 'Lesson Interface',
+        title: 'Roadmap & Courses',
         description: 'Interactive lesson modules designed to feel like gameplay rather than a textbook. Each lesson has a progress bar, embedded media, and short micro-challenges that keep engagement high throughout the session.',
+        image: '/arcadelearn/roadmap.png',
       },
       {
-        title: 'Quiz & Assessment',
+        title: 'AI Doubt Solving',
         description: 'Gamified quizzes with real-time feedback, animated correct/wrong indicators, and a scoring system. Designed to reduce test anxiety while still measuring comprehension effectively.',
+        image: '/arcadelearn/aidoubtsolving.png',
       },
       {
         title: 'Progress Dashboard',
         description: 'A personal stats view showing streaks, completed modules, time spent, and earned badges. Visualised with clean charts and motivating milestone markers to drive consistency.',
+        image: '/arcadelearn/dashboard.png',
+      },
+      {
+        title: 'Jobs Board',
+        description: 'A curated jobs section connecting learners with real opportunities matched to their skill level and completed roadmaps — bridging the gap from learning to employment.',
+        image: '/arcadelearn/jobs.png',
       },
     ],
   },
@@ -59,20 +68,24 @@ export const projects: Project[] = [
     techStack: ['Java', 'Spring Boot', 'React', 'PostgreSQL', 'Maven', 'REST API'],
     sections: [
       {
-        title: 'Landing Dashboard',
+        title: 'Home',
         description: 'The main hub showing a real-time overview of platform activity — key metrics, recent actions, and quick-access shortcuts. Designed for efficiency so power users can navigate the whole app from a single view.',
+        image: '/nexity60/home.png',
       },
       {
-        title: 'User Authentication',
-        description: 'Secure login and registration flows built with Spring Security — including JWT-based sessions, OAuth support, and role-based access control. The UI keeps friction minimal while staying airtight on security.',
-      },
-      {
-        title: 'Data Management',
+        title: 'Categories',
         description: 'Full CRUD operations for the platform\'s core entities with inline editing, bulk actions, and real-time validation. Built to handle large datasets without sacrificing responsiveness.',
+        image: '/nexity60/categories.png',
       },
       {
-        title: 'Admin Panel',
-        description: 'A separate admin-only zone for managing users, content, and system settings. Includes activity logs, permission controls, and analytics snapshots — all behind protected routing.',
+        title: 'Science Section',
+        description: 'Deep-dive content pages organised by topic — structured to surface the most relevant results instantly with clean filtering and a readable article layout.',
+        image: '/nexity60/science.png',
+      },
+      {
+        title: 'Sports Section',
+        description: 'A dynamic sports feed with live scores, match highlights, and category-based navigation — built for fast skimming and deep reading in equal measure.',
+        image: '/nexity60/sports.png',
       },
     ],
   },
@@ -85,23 +98,27 @@ export const projects: Project[] = [
     link: 'https://wielearn.com/',
     year: '2023',
     role: 'Product Designer',
-    techStack: ['Figma', 'React', 'Next.js', 'Framer Motion', 'Supabase'],
+    techStack: ['HTML', 'CSS', 'Bootstrap', 'Express.js', 'Three.js'],
     sections: [
       {
         title: 'Platform Home',
         description: 'The discovery layer — featured courses, trending topics, and personalised recommendations above the fold. Designed to reduce decision fatigue and guide students toward their next learning step immediately.',
+        image: '/wielearn/home-aiforkids.png',
       },
       {
-        title: 'Course Detail',
-        description: 'A deep-dive page for each course with curriculum breakdown, instructor bio, preview lessons, and enrollment CTA. Structured to answer every question a prospective student might have before committing.',
+        title: 'AI for Class 10',
+        description: 'A deep-dive course page with curriculum breakdown, lesson previews, and enrollment CTA. Structured to answer every question a prospective student might have before committing.',
+        image: '/wielearn/ai-class-10th.png',
       },
       {
-        title: 'Student Dashboard',
+        title: 'Data Science Course',
         description: 'A personal learning hub tracking active courses, progress percentages, upcoming deadlines, and earned certificates. Clean card layout with a calm visual hierarchy that doesn\'t overwhelm.',
+        image: '/wielearn/ds-class-10th.png',
       },
       {
-        title: 'Community Forum',
+        title: 'Q&A Community',
         description: 'Threaded discussions tied to specific lessons, allowing peer Q&A and instructor responses in context. Keeps the conversation anchored to the content so learning stays social and focused.',
+        image: '/wielearn/qna.png',
       },
     ],
   },
@@ -114,23 +131,26 @@ export const projects: Project[] = [
     link: 'https://youtube.com/aiforkids',
     year: '2024',
     role: 'Brand Designer & Content Strategist',
-    techStack: ['Figma', 'Adobe Illustrator', 'After Effects', 'Premiere Pro'],
+    techStack: ['Canva', 'Adobe Illustrator', 'After Effects', 'Premiere Pro'],
     sections: [
       {
         title: 'Brand Identity',
         description: 'Developed the full visual identity — logo, color system, typography, and illustration style. The direction was bold, curious, and approachable: something a 10-year-old would trust and a parent would respect.',
       },
       {
-        title: 'Website Homepage',
-        description: 'A child-friendly but not childish homepage — big visuals, clear messaging, and smooth scroll interactions. Designed to convert both kids who discover it and parents who vet it.',
-      },
-      {
-        title: 'YouTube Channel Design',
+        title: 'YouTube Channel',
         description: 'Custom thumbnail templates, channel art, intro/outro animations, and lower-thirds. Consistent visual language across every video helps build recognition and trust at scale.',
+        image: '/aiforkids/youtube.png',
       },
       {
-        title: 'Curriculum Page',
+        title: 'Course Videos',
         description: 'Module-by-module breakdown of the AI curriculum in a visual, easy-to-digest layout. Each topic card has a difficulty indicator, time estimate, and activity type to help learners self-pace.',
+        image: '/aiforkids/yt-courses.png',
+      },
+      {
+        title: 'Video Library',
+        description: 'A curated library of AI explainer videos organised by topic and age group — making it easy for kids and parents to find the right content at the right level.',
+        image: '/aiforkids/yt-videos.png',
       },
     ],
   },
@@ -143,11 +163,12 @@ export const projects: Project[] = [
     link: 'https://love-for-ai.vercel.app',
     year: '2024',
     role: 'Brand Designer & Web Designer',
-    techStack: ['Figma', 'React', 'Vite', 'Tailwind CSS', 'Vercel'],
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'Supabase', 'Three.js', 'Framer Motion'],
     sections: [
       {
         title: 'Conference Landing',
         description: 'The event\'s digital front door — date, venue, and theme communicated in under 3 seconds. The hero uses ambient animation and a bold typographic lockup to set the tone for a premium AI conference.',
+        image: '/loveforai/home.png',
       },
       {
         title: 'Speaker Showcase',
