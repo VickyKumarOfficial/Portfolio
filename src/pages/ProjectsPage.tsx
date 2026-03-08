@@ -72,8 +72,12 @@ export default function ProjectsPage() {
         {projects.map((project, i) => (
           <article
             key={project.id}
-            className="pp-card"
+            className="pp-card pp-card--clickable"
             style={{ animationDelay: `${i * 0.08}s` }}
+            onClick={() => navigate(`/projects/${project.id}`)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={e => { if (e.key === 'Enter') navigate(`/projects/${project.id}`) }}
           >
             <div className="pp-card-img-wrap">
               <img
@@ -90,31 +94,34 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              <h2 className="pp-card-title">
-                <a
-                  href={project.link ?? '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="pp-card-title-link"
-                >
-                  {project.title}
-                  <svg
-                    className="pp-link-icon"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+              <div className="pp-card-title-row">
+                <h2 className="pp-card-title">{project.title}</h2>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pp-ext-link"
+                    onClick={e => e.stopPropagation()}
+                    title="Open live site"
                   >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                </a>
-              </h2>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                )}
+              </div>
 
               <p className="pp-card-desc">{project.description}</p>
             </div>

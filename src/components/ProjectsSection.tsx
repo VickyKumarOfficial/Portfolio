@@ -85,7 +85,7 @@ export default function ProjectsSection() {
 
       <div className="browse-projects-container">
         <button className="browse-projects-btn" onClick={() => navigate('/projects')}>
-          Browse projects
+          Browse all projects
         </button>
       </div>
 
